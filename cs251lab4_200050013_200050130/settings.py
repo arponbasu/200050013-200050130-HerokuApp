@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'cs251lab4_200050013_200050130.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -92,8 +92,12 @@ DATABASES = {
         'PORT': '8000',
     }
 }
-
-
+'''
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+DATABASES['default'] = dj_database_url.parse(f"{os.environ.get('DATABASE_URL')}")
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
