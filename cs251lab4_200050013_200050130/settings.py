@@ -89,7 +89,7 @@ DATABASES = {
         'USER': config('USER'),
         'PASSWORD': config('PASSWORD'),
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '8000',
     }
 }
 
