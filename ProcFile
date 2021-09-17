@@ -1,0 +1,2 @@
+web: gunicorn accounts.wsgi
+web: gunicorn profile_fetch.wsgi

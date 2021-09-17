@@ -1,0 +1,73 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="upperbody">
+    <div class="pretitle">Built by 200050013-200050130</div>
+    <div class="title">
+        <h1>Hi {{ user.first_name }}! Welcome to Github Profiles!</h1>
+    </div>
+    <div class="hero-cta">
+        <a href="../explore" class="pressit">Explore</a>
+        <a href="../profile" class="pressit">My Profile</a>
+        <a href="{% url 'logout' %}" class="pressit">Logout</a>
+    </div>
+</div>
+<div class="userDetails">
+    <br><h2>{{ user.first_name }} {{user.last_name}} (@{{ user.username }})</h2>
+    {% if error %}
+    {{error}}
+    <br>
+    {% endif %}
+    {% if followers and time %}
+    You currently have {{followers}} followers.
+    <br>
+    Your profile was last updated at {{time}} (GMT).
+    {% endif %}
+    <br>
+    <br>
+    A snapshot of your repositories : <br>
+    <!ul>
+        <ul>{{repo1}}</ul>
+        <ul>{{repo2}}</ul>
+        <ul>{{repo3}}</ul>
+        <ul>{{repo4}}</ul>
+        <ul>{{repo5}}</ul>
+        <ul>{{repo6}}</ul>
+        <ul>{{repo7}}</ul>
+        <ul>{{repo8}}</ul>
+        <ul>{{repo9}}</ul>
+        <ul>{{repo10}}</ul>
+        <ul>{{repo11}}</ul>
+        <ul>{{repo12}}</ul>
+        <ul>{{repo13}}</ul>
+        <ul>{{repo14}}</ul>
+        <ul>{{repo15}}</ul>
+        <ul>{{repo16}}</ul>
+        <ul>{{repo17}}</ul>
+        <ul>{{repo18}}</ul>
+        <ul>{{repo19}}</ul>
+        <ul>{{repo20}}</ul>
+        <ul>{{repo21}}</ul>
+        <ul>{{repo22}}</ul>
+        <ul>{{repo23}}</ul>
+        <ul>{{repo24}}</ul>
+        <ul>{{repo25}}</ul>
+        <ul>{{repo26}}</ul>
+        <ul>{{repo27}}</ul>
+        <ul>{{repo28}}</ul>
+        <ul>{{repo29}}</ul>
+        <ul>{{repo30}}</ul>
+    <!/ul>
+    
+    <form id="update" method="post" action="" >
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{ user.username }} />
+        <button type="submit">Update Now</button>
+    </form>
+</div>
+
+{% endblock %}

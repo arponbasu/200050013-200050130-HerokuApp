@@ -1,0 +1,39 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="upperbody">
+    <div class="pretitle">Built by 200050013-200050130</div>
+    <div class="title">
+        <h1>Welcome to Github Profiles!</h1>
+    </div>
+    <div class="hero-cta">
+        <a href="../signup" class="pressit">Signup</a>
+        <a href="../login" class="pressit">Login</a>
+    </div>
+</div>
+
+<div class="padding">
+    <h1>
+        Login to Github Profiles
+    </h1>
+    <form method="post">
+        {% csrf_token %}
+        <!-- <label for="uname">Username:</label>
+        <input type="text" id="uname" name="uname"> <br> <br>
+        <label for="pwd">Password:</label>
+        <input type="text" id="pwd" name="pwd">
+
+        <br><br> -->
+        {{ form.as_p }}
+        <div class="custom_hero-cta">
+            <button type="submit" class="pressit">Log In</button>
+        </div>
+        <!-- <div class="custom_hero-cta">
+            <a href="#" type="submit" class="pressit">Login</a>
+        </div> -->
+    </form>
+</div>
+{% endblock %}

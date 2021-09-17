@@ -1,0 +1,28 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+
+{% block title %}Explore{% endblock %}
+
+{% block content %}
+
+<div class="upperbody">
+    <div class="pretitle">Built by 200050013-200050130</div>
+    <div class="title">
+        <h1>Hi {{ user.first_name }}! Welcome to Github Profiles!</h1>
+    </div>
+    <div class="hero-cta">
+        <a href="../explore" class="pressit">Explore</a>
+        <a href="../profile" class="pressit">My Profile</a>
+        <a href="{% url 'logout' %}" class="pressit">Logout</a>
+    </div>
+</div>
+<div>
+    <ul>
+        <li class="username"><a href="#" class="user_button">torvalds</a></li>
+        <li class="username"><a href="#" class="user_button">tiwai</a></li>
+        <li class="username"><a href="#" class="user_button">gregkh</a></li>
+        <li class="username"><a href="#" class="user_button">mchehab</a></li>
+    </ul>
+</div>
+{% endblock %}
