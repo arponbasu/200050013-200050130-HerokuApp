@@ -97,6 +97,7 @@ DATABASES = {
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
+DATABASES = {,}
 DATABASES['default'] = dj_database_url.parse(f"{os.environ.get('DATABASE_URL')}")
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 # Password validation
