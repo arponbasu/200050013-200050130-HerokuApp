@@ -131,15 +131,12 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-if sys.argv[1] != 'runserver':
+STATIC_ROOT = os.path.join(BASE_DIR, "static")    
+if sys.argv[1] == 'runserver':
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
-else:
-    STATIC_ROOT = 'storage/Webpages/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
